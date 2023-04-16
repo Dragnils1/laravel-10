@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 // Route::get('/user', [UsersCo::class, 'index']);
-
+Route::redirect('/', 'users');
 Route::resource('users', UsersController::class);
 
