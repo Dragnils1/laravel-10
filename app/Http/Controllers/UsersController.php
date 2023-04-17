@@ -22,7 +22,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-
+        return(view('form'));
     }
 
     /**
@@ -30,7 +30,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->only(['name', 'email']));
+        return redirect('users.index');
     }
 
     /**

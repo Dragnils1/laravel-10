@@ -2,6 +2,9 @@
 @section('title', 'users')
 
 @section('content')
+
+<a class="btn btn-primary" role="button" href="{{ route('users.create') }}">Create user</a>
+
 <table class="table">
     <thead>
       <tr>
@@ -12,23 +15,16 @@
       </tr>
     </thead>
     <tbody>
+      @foreach ($users as $user)
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+        <th scope="row">{{ $user->id}}</th>
+        <td colspan="2">{{ $user->name}}</td>
+        <td>{{ $user->email}}</td>
+    </tr>
+      @endforeach
+
+
     </tbody>
   </table>
+
 @endsection
