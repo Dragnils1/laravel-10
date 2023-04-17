@@ -2,6 +2,7 @@
 @section('title', isset($user) ? 'Update'.$user->name : 'Create user')
 
 @section('content')
+
 <a href="{{ route('users.index') }}" class="btn btn-info">Turn back</a>
 <form method="POST"
 

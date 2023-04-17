@@ -18,9 +18,19 @@
     <tbody>
       @foreach ($users as $user)
       <tr>
-        <th scope="row">{{ $user->id}}</th>
-        <td colspan="2">{{ $user->name}}</td>
-        <td>{{ $user->email}}</td>
+        <th scope="row">
+            {{ $user->id}}
+        </th>
+        <td colspan="2">
+            <a href="{{ route('users.show', $user) }}" >
+                {{ $user->name}}
+            </a>
+        </td>
+        <td>
+            <a href="{{ route('users.show', $user) }}" >
+                {{ $user->email}}
+            </a>
+        </td>
         <td>
             <a href="{{ route('users.edit', $user) }}" class="btn btn-warning">Edit</a>
         </td>
