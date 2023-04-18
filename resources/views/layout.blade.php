@@ -55,7 +55,16 @@
 <div class="container">
     <main>
         <h1>@yield('title')</h1>
+        @if(session('danger'))
+            <div class="alert alert-danger">{{ session('danger') }}</div>
+        @endif
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         @yield('content')
+        {{-- @foreach (session()->flash() as  $key => $message)
+            <div class="alert alert-danger">{{ $message }}</div>
+        @endforeach --}}
     </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
