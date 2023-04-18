@@ -14,7 +14,7 @@
     </ul>
   </div>
 
-  <form action="POST" action="{{ route('users.destroy', $user)}}" class="mt-3">
+  <form method="POST" action="{{ route('users.destroy', $user)}}" class="mt-3">
         @csrf
         @method('DELETE')
         <a href="{{ route('users.edit', $user) }}" class="btn btn-warning">Edit</a>
